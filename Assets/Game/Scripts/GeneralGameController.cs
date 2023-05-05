@@ -51,7 +51,6 @@ public class GeneralGameController : MonoBehaviour
     private void ResetScore()
     {
         _healthController.Health = _healthController.InitHealth;
-        _scoreController.ResetScore();
     }
 
     private void SaveScore()
@@ -69,6 +68,7 @@ public class GeneralGameController : MonoBehaviour
         ShowGameOverUI(false);
         PauseGame(false);
         _healthController.HealthTextures.ForEach(go => go.gameObject.SetActive(true));
+        _scoreController.ResetScore();
     }
     private void DestroyAllEnemies()
     {
