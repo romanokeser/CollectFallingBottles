@@ -38,6 +38,7 @@ public class GeneralGameController : MonoBehaviour
     private void PauseGame(bool pause)
     {
         _enemySpawner.enabled = !pause;
+        DestroyAllEnemies();
     }
 
     private void ShowGameOverUI(bool show)
@@ -67,7 +68,15 @@ public class GeneralGameController : MonoBehaviour
     {
         ShowGameOverUI(false);
         PauseGame(false);
-
+        _healthController.HealthTextures.ForEach(go => go.gameObject.SetActive(true));
     }
+    private void DestroyAllEnemies()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
+    }
 }

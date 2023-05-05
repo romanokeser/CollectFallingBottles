@@ -1848,9 +1848,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167574460}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &1188344459
 GameObject:
@@ -1896,12 +1896,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37464e8a42dfbeb468687d5af6c03955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthTextures:
+  HealthTextures:
   - {fileID: 592116745}
   - {fileID: 1238374749}
   - {fileID: 1658323647}
-  Health: 2
-  InitHealth: 2
+  Health: 3
+  InitHealth: 3
 --- !u!1 &1238374749
 GameObject:
   m_ObjectHideFlags: 0
@@ -2749,7 +2749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3975803159370324408, guid: 7aa524f183b5a6540b846795d25e9511, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.04
+      value: -3.705
       objectReference: {fileID: 0}
     - target: {fileID: 3975803159370324408, guid: 7aa524f183b5a6540b846795d25e9511, type: 3}
       propertyPath: m_LocalPosition.z

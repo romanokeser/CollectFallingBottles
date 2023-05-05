@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HealthController : MonoBehaviour
 {
     public static Action OnAllHealthWasted;
-    [SerializeField] private List<GameObject> _healthTextures;
+    public List<GameObject> HealthTextures;
     public int Health;
     public int InitHealth = 3;
 
@@ -19,15 +19,18 @@ public class HealthController : MonoBehaviour
 
     private void HealthDown()
     {
-        if (Health == 0)
+        int temp = Health - 1;
+        if (temp == 0)
         {
             Debug.Log("Game over!");
+            HealthTextures.ForEach(go => go.gameObject.SetActive(false));
+
             OnAllHealthWasted?.Invoke();
         }
         else
         {
             Health -= 1;
-            _healthTextures[Health].SetActive(false);
+            HealthTextures[Health].SetActive(false);
 
         }
     }
