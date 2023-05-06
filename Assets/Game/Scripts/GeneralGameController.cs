@@ -62,6 +62,7 @@ public class GeneralGameController : MonoBehaviour
         _enemySpawner.enabled = true;
         _enemySpawnerSpecial.enabled = true;
         SetGameState(GameState.Active);
+        _playerDrag.SetPlayerToCenter();
     }
 
     private void ShowGameOverUI(bool show)

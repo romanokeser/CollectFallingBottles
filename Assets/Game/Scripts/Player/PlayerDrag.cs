@@ -26,9 +26,7 @@ public class PlayerDrag : MonoBehaviour
 
     private Vector3 GetMouseWorldPos()
     {
-
         Vector3 mousePoint = Input.mousePosition;
-
         mousePoint.z = mZCoord;
 
         return Camera.main.ScreenToWorldPoint(mousePoint);
@@ -48,5 +46,12 @@ public class PlayerDrag : MonoBehaviour
 
             transform.position = newPosition;
         }
+    }
+
+    public void SetPlayerToCenter()
+    {
+        Vector3 newPosition = transform.position;
+        newPosition.x = 0f;
+        transform.position = newPosition;
     }
 }

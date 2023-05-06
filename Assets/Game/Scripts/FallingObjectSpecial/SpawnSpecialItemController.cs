@@ -27,7 +27,7 @@ public class SpawnSpecialItemController : MonoBehaviour
             _spawnSpecialItem.gameObject.SetActive(true);
             _spawnSpecialItem.gameObject.SetActive(false);
 
-            _gameController.PauseGame();
+            //_gameController.PauseGame();
         }
     }
 }

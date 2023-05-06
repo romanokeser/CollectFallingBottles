@@ -9,7 +9,6 @@ public class FallingObjectCollisionDetection : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log("Collected regular item!");
             other.gameObject.SetActive(false);
             OnEnemyCollect?.Invoke();
         }
