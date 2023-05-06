@@ -1409,7 +1409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scoreController: {fileID: 577920377}
   _spawnSpecialItem: {fileID: 1908156068}
-  _percentageOfProbabiltyOfSpawningItem: 50
+  _percentageOfProbabiltyOfSpawningItem: 0.51
 --- !u!1 &928760080
 GameObject:
   m_ObjectHideFlags: 0
@@ -2172,7 +2172,7 @@ MonoBehaviour:
   - {fileID: 592116745}
   - {fileID: 1238374749}
   - {fileID: 1658323647}
-  Health: 3
+  Health: 100
   InitHealth: 3
 --- !u!1 &1238374749
 GameObject:
@@ -3207,7 +3207,7 @@ MonoBehaviour:
   - {fileID: 1999620025}
   - {fileID: 435907979}
   - {fileID: 1293903314}
-  speed: 1
+  speed: 5
 --- !u!1 &1999620024
 GameObject:
   m_ObjectHideFlags: 0
