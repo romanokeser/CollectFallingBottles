@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyCollisionDetection : MonoBehaviour
+public class FallingObjectCollisionDetection : MonoBehaviour
 {
     public static Action OnEnemyCollect;
     private void OnTriggerEnter2D(Collider2D other)

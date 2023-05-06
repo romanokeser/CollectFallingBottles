@@ -2616,7 +2616,7 @@ GameObject:
   - component: {fileID: 1974557742}
   - component: {fileID: 1974557743}
   m_Layer: 0
-  m_Name: EnemySpawner
+  m_Name: FallingObjectSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

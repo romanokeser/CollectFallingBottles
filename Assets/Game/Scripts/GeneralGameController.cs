@@ -1,8 +1,4 @@
 using DG.Tweening;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +6,7 @@ public class GeneralGameController : MonoBehaviour
 {
     [SerializeField] private HealthController _healthController;
     [SerializeField] private ScoreController _scoreController;
-    [SerializeField] private EnemySpawner _enemySpawner;
+    [SerializeField] private FallingObjectSpawner _enemySpawner;
     [SerializeField] private CanvasGroup _gameOverCanvas;
     [Header("Buttons")]
     [SerializeField] private Button _playAgainBtn;

@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class FallingObjectSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject objectToInstantiate;
-
     [SerializeField] private Transform[] spawnPoints;
-
     [SerializeField] private float speed = 1f;
 
     private float spawnTimer = 0f;
-
-    private int spawnPointIndex = 0;
 
     private void Update()
     {

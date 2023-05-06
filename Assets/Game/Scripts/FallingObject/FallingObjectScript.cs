@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
+public class FallingObjectScript : MonoBehaviour
 {
     [SerializeField] private float _speed = 5f;
 
