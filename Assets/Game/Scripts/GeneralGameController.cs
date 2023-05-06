@@ -7,6 +7,7 @@ public class GeneralGameController : MonoBehaviour
     [SerializeField] private HealthController _healthController;
     [SerializeField] private ScoreController _scoreController;
     [SerializeField] private FallingObjectSpawner _enemySpawner;
+    [SerializeField] private SpawnSpecialItem _enemySpawnerSpecial;
     [SerializeField] private CanvasGroup _gameOverCanvas;
     [Header("Buttons")]
     [SerializeField] private Button _playAgainBtn;
@@ -34,6 +35,7 @@ public class GeneralGameController : MonoBehaviour
     private void PauseGame(bool pause)
     {
         _enemySpawner.enabled = !pause;
+        _enemySpawnerSpecial.enabled = !pause;
         DestroyAllEnemies();
     }
 
