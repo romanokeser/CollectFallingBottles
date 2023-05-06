@@ -2,16 +2,26 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum GameState
+{
+    Active,
+    Paused,
+    GameOver
+}
+
 public class GeneralGameController : MonoBehaviour
 {
     [SerializeField] private HealthController _healthController;
     [SerializeField] private ScoreController _scoreController;
     [SerializeField] private FallingObjectSpawner _enemySpawner;
     [SerializeField] private SpawnSpecialItem _enemySpawnerSpecial;
+    [SerializeField] private PlayerDrag _playerDrag;
     [SerializeField] private CanvasGroup _gameOverCanvas;
     [Header("Buttons")]
     [SerializeField] private Button _playAgainBtn;
     [SerializeField] private Button _closeBtn;
+
+    public static GameState GameStateGlobal;
 
 
     private void Awake()
@@ -21,22 +31,37 @@ public class GeneralGameController : MonoBehaviour
         ShowGameOverUI(false);
         _playAgainBtn.onClick.AddListener(PlayAgain);
         _closeBtn.onClick.AddListener(CloseApp);
+
+        GameStateGlobal = GameState.Active;
     }
 
+    private void SetGameState(GameState newState)
+    {
+        GameStateGlobal = newState;
+    }
 
     public void GameOver()
     {
-        PauseGame(true);
+        PauseGame();
         ShowGameOverUI(true);
         SaveScore();
         ResetScore();
+        SetGameState(GameState.Paused);
     }
 
-    private void PauseGame(bool pause)
+    public void PauseGame()
     {
-        _enemySpawner.enabled = !pause;
-        _enemySpawnerSpecial.enabled = !pause;
+        _enemySpawner.enabled = false;
+        _enemySpawnerSpecial.enabled = false;
         DestroyAllEnemies();
+        SetGameState(GameState.Paused);
+    }
+
+    public void ResumeGame()
+    {
+        _enemySpawner.enabled = true;
+        _enemySpawnerSpecial.enabled = true;
+        SetGameState(GameState.Active);
     }
 
     private void ShowGameOverUI(bool show)
@@ -64,10 +89,17 @@ public class GeneralGameController : MonoBehaviour
     private void PlayAgain()
     {
         ShowGameOverUI(false);
-        PauseGame(false);
-        _healthController.HealthTextures.ForEach(go => go.gameObject.SetActive(true));
+        ResumeGame();
+        ShowHealthTextures(true);
         _scoreController.ResetScore();
+        SetGameState(GameState.Active);
     }
+
+    private void ShowHealthTextures(bool show)
+    {
+        _healthController.HealthTextures.ForEach(go => go.gameObject.SetActive(show));
+    }
+
     private void DestroyAllEnemies()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");

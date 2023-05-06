@@ -6,6 +6,7 @@ public class SpawnSpecialItemController : MonoBehaviour
 {
     [SerializeField] private ScoreController _scoreController;
     [SerializeField] private SpawnSpecialItem _spawnSpecialItem;
+    [SerializeField] private GeneralGameController _gameController;
     [Tooltip("adjust the value to control the probability of spawning a special item. For example, if you want a 50% chance of spawning a special item every 10 points, you could set it to 0.5f.")]
     [SerializeField, Range(0f, 1f)] private float _percentageOfProbabiltyOfSpawningItem;
 
@@ -25,6 +26,8 @@ public class SpawnSpecialItemController : MonoBehaviour
         {
             _spawnSpecialItem.gameObject.SetActive(true);
             _spawnSpecialItem.gameObject.SetActive(false);
+
+            _gameController.PauseGame();
         }
     }
 }

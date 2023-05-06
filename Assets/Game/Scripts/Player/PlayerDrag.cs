@@ -8,6 +8,8 @@ public class PlayerDrag : MonoBehaviour
     private Vector3 mOffset;
     private float mZCoord;
 
+    GameState _currentState;
+
     void Start()
     {
         // Get half the width of the object
@@ -24,6 +26,7 @@ public class PlayerDrag : MonoBehaviour
 
     private Vector3 GetMouseWorldPos()
     {
+
         Vector3 mousePoint = Input.mousePosition;
 
         mousePoint.z = mZCoord;
@@ -33,14 +36,17 @@ public class PlayerDrag : MonoBehaviour
 
     void OnMouseDrag()
     {
-        Vector3 newPosition = GetMouseWorldPos() + mOffset;
-        newPosition.y = fixedYPosition;
+        if (GeneralGameController.GameStateGlobal != GameState.Paused)
+        {
+            Vector3 newPosition = GetMouseWorldPos() + mOffset;
+            newPosition.y = fixedYPosition;
 
-        // Constrain the X position within the screen resolution
-        float minX = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, mZCoord)).x + objectHalfWidth;
-        float maxX = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, mZCoord)).x - objectHalfWidth;
-        newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
+            // Constrain the X position within the screen resolution
+            float minX = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, mZCoord)).x + objectHalfWidth;
+            float maxX = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, mZCoord)).x - objectHalfWidth;
+            newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
 
-        transform.position = newPosition;
+            transform.position = newPosition;
+        }
     }
 }

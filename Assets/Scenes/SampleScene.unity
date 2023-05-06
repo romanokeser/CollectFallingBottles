@@ -1409,6 +1409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scoreController: {fileID: 577920377}
   _spawnSpecialItem: {fileID: 1908156068}
+  _gameController: {fileID: 1423149764}
   _percentageOfProbabiltyOfSpawningItem: 0.51
 --- !u!1 &928760080
 GameObject:
@@ -2442,6 +2443,7 @@ MonoBehaviour:
   _scoreController: {fileID: 577920377}
   _enemySpawner: {fileID: 1974557742}
   _enemySpawnerSpecial: {fileID: 1908156068}
+  _playerDrag: {fileID: 1878265307}
   _gameOverCanvas: {fileID: 1167574465}
   _playAgainBtn: {fileID: 1606609159}
   _closeBtn: {fileID: 1709102690}
@@ -3093,6 +3095,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0.31000012, y: 5.19}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1878265307 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3772039451164085686, guid: 7aa524f183b5a6540b846795d25e9511, type: 3}
+  m_PrefabInstance: {fileID: 6420022952156131243}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f80031ce2e91704ea4ec1a6d588dab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1908156066
 GameObject:
   m_ObjectHideFlags: 0
