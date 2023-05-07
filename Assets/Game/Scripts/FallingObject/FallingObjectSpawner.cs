@@ -38,6 +38,6 @@ public class FallingObjectSpawner : MonoBehaviour
         lastSpawnPointIndex = randomSpawnIndex;
 
         GameObject spawnedObject = Instantiate(objectToInstantiate, spawnPoints[randomSpawnIndex].position, Quaternion.identity);
-        Destroy(spawnedObject, 2f);
+        Destroy(spawnedObject, 4f);
     }
 }

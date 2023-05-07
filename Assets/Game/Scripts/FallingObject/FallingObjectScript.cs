@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class FallingObjectScript : MonoBehaviour
 {
-    [SerializeField] private float _speed = 5f;
+    [SerializeField] private float _minSpeed = 1f;
+    [SerializeField] private float _maxSpeed = 8f;
+
 
     private Rigidbody2D rb;
 
@@ -13,6 +15,7 @@ public class FallingObjectScript : MonoBehaviour
 
     void Start()
     {
-        rb.velocity = Vector2.down * _speed;
+        float randomSpeed = Random.Range(_minSpeed, _maxSpeed);
+        rb.velocity = Vector2.down * randomSpeed;
     }
 }
