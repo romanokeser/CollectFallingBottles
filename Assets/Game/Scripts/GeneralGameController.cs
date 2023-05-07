@@ -11,6 +11,8 @@ public enum GameState
 
 public class GeneralGameController : MonoBehaviour
 {
+    public static GeneralGameController Instance;
+
     [SerializeField] private HealthController _healthController;
     [SerializeField] private ScoreController _scoreController;
     [SerializeField] private FallingObjectSpawner _enemySpawner;
@@ -26,6 +28,9 @@ public class GeneralGameController : MonoBehaviour
 
     private void Awake()
     {
+        if(Instance == null)
+            Instance = this;
+
         HealthController.OnAllHealthWasted += GameOver;
 
         ShowGameOverUI(false);
