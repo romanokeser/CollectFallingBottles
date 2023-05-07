@@ -103,10 +103,10 @@ public class GeneralGameController : MonoBehaviour
 
     private void DestroyAllEnemies()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject[] specialItems = GameObject.FindGameObjectsWithTag("FallingObjectSpecial");
+        GameObject[] collectableItem = GameObject.FindGameObjectsWithTag("CollectableItem");
+        GameObject[] specialItems = GameObject.FindGameObjectsWithTag("SpecialItem");
 
-        foreach (GameObject enemy in enemies)
+        foreach (GameObject enemy in collectableItem)
         {
             Destroy(enemy);
         }

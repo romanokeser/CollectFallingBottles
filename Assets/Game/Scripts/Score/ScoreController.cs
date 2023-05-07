@@ -11,7 +11,7 @@ public class ScoreController : MonoBehaviour
 
     private void Awake()
     {
-        FallingObjectCollisionDetection.OnEnemyCollect += ScoreUp;
+        EventHelper.OnRegularItemCollect += ScoreUp;
     }
 
     private void ScoreUp()

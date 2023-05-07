@@ -12,7 +12,7 @@ public class HealthController : MonoBehaviour
     private void Awake()
     {
         Health = 3;
-        ScoreDown.OnEnemyNotCollected += HealthDown;
+        ScoreDown.OnCollectableItemMissed += HealthDown;
     }
 
     private void HealthDown()
